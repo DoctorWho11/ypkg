@@ -88,14 +88,14 @@ def main():
         sys.exit(1)
 
     # Test who we are
-    if os.geteuid() == 0:
-        if "FAKED_MODE" not in os.environ:
-            console_ui.emit_warning("Warning", "ypkg-build should be run via "
-                                    "fakeroot, not as real root user")
-    else:
-        console_ui.emit_error("Fail", "ypkg-build must be run with fakeroot, "
-                              "or as the root user (not recommended)")
-        sys.exit(1)
+#    if os.geteuid() == 0:
+#        if "FAKED_MODE" not in os.environ:
+#            console_ui.emit_warning("Warning", "ypkg-build should be run via "
+#                                    "fakeroot, not as real root user")
+#    else:
+#        console_ui.emit_error("Fail", "ypkg-build must be run with fakeroot, "
+#                              "or as the root user (not recommended)")
+#        sys.exit(1)
 
     build_package(args.filename, outputDir)
 

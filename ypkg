@@ -59,7 +59,7 @@ def main():
     try:
         subprocess.check_call("ypkg-install-deps {}".format(args), shell=True)
         if needFakeroot:
-            sub = "fakeroot "
+            sub = ""
         else:
             sub = ""
         subprocess.check_call("{}ypkg-build {}".format(sub, cargs), shell=True)
